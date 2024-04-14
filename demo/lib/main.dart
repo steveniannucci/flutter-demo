@@ -37,8 +37,13 @@ class _TodoListScreenState extends State<TodoListScreen> {
       body: ListView.builder(
         itemCount: todos.length,
         itemBuilder: (BuildContext context, int index) {
-          return ListTile(
-            title: Text(todos[index]),
+          return Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black),
+            ),
+            child: ListTile(
+              title: Text(todos[index]),
+            ),
           );
         },
       ),
