@@ -32,6 +32,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('To-Do List'),
+        backgroundColor:  Colors.blue,
       ),
       body: ListView.builder(
         itemCount: todos.length,
