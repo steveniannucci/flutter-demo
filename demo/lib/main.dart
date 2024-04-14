@@ -51,7 +51,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
             child: ListTile(
               title: Text(
                 todos[index],
-                style: const TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.white),
                 ),
             ),
           );
