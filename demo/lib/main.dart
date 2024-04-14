@@ -39,6 +39,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
         itemBuilder: (BuildContext context, int index) {
           return Container(
             decoration: BoxDecoration(
+              color: Colors.black,
               border: Border.all(color: Colors.black),
             ),
             margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
