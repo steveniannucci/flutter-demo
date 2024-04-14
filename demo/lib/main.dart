@@ -32,7 +32,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('To-Do List'),
-        backgroundColor:  Colors.blue,
+        backgroundColor:  const Color.fromARGB(255, 0, 0, 0),
       ),
       body: ListView.builder(
         itemCount: todos.length,
@@ -44,7 +44,10 @@ class _TodoListScreenState extends State<TodoListScreen> {
             ),
             margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
             child: ListTile(
-              title: Text(todos[index]),
+              title: Text(
+                todos[index],
+                style: const TextStyle(color: Colors.white),
+                ),
             ),
           );
         },
