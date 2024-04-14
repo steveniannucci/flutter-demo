@@ -91,7 +91,9 @@ class _TodoListScreenState extends State<TodoListScreen> {
               onPressed: () {
                 setState(() {
                   todos.add(_textEditingController.text);
-                  isChecked.add(false);
+                  if (todos.length > isChecked.length) {
+                    isChecked.add(false);
+                  }
                   _textEditingController.clear();
                 });
                 Navigator.of(context).pop();
