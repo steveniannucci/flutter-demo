@@ -25,9 +25,9 @@ class TodoListScreen extends StatefulWidget {
 }
 
 class _TodoListScreenState extends State<TodoListScreen> {
-  List<String> todos = [];
-
-  TextEditingController _textEditingController = TextEditingController();
+  final List<String> todos = [];
+  final TextEditingController _textEditingController = TextEditingController();
+  final List<bool> isChecked = [];
 
   @override
   Widget build(BuildContext context) {
@@ -44,18 +44,19 @@ class _TodoListScreenState extends State<TodoListScreen> {
       body: ListView.builder(
         itemCount: todos.length,
         itemBuilder: (BuildContext context, int index) {
-          return Container(
-            decoration: BoxDecoration(
-              color: Colors.black,
-              border: Border.all(color: Colors.black),
+          return CheckboxListTile(
+            title: Text(
+              todos[index],
+              style: TextStyle(color: Colors.white),
             ),
-            margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-            child: ListTile(
-              title: Text(
-                todos[index],
-                style: TextStyle(color: Colors.white),
-                ),
-            ),
+            value: isChecked[index],
+            onChanged: (bool? value) {
+              setState(() {
+                isChecked[index] = value!;
+              });
+            },
+            activeColor: Colors.white,
+            checkColor: Colors.black,
           );
         },
       ),
@@ -90,6 +91,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
               onPressed: () {
                 setState(() {
                   todos.add(_textEditingController.text);
+                  isChecked.add(false);
                   _textEditingController.clear();
                 });
                 Navigator.of(context).pop();
