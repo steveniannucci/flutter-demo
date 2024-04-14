@@ -40,7 +40,9 @@ class _TodoListScreenState extends State<TodoListScreen> {
           return Container(
             decoration: BoxDecoration(
               border: Border.all(color: Colors.black),
+              
             ),
+            margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
             child: ListTile(
               title: Text(todos[index]),
             ),
